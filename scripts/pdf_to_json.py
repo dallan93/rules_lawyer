@@ -1,0 +1,29 @@
+import PyPDF2
+import json
+
+
+def pdf_to_json(pdf_path, json_path):
+    pdf = open(pdf_path, 'rb')
+    reader = PyPDF2.PdfReader(pdf)
+
+    data = []
+
+    for page_num in range(len(reader.pages)):
+        page = reader.pages[page_num]
+        text = page.extract_text()
+
+        data.append({
+            'page_number': page_num + 1,
+            'text': text
+        })
+
+    with open(json_path, 'w', encoding='utf-8') as json_file:
+        json.dump(data, json_file, ensure_ascii=False, indent=4)
+    pdf.close()
+
+
+if __name__ == "__main__":
+    pdf_path = '../data/core.pdf'
+    json_path = '../data/core_json.json'
+    pdf_to_json(pdf_path, json_path)
+
