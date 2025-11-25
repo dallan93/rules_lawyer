@@ -37,7 +37,7 @@ def get_title(text):
 
 
 if __name__ == "__main__":
-    pdf_path = '../data/core.pdf'
-    json_path = '../data/core_json.json'
+    pdf_path = '../data/errata.pdf'
+    json_path = '../data/errata.json'
     pdf_to_json(pdf_path, json_path)
 
