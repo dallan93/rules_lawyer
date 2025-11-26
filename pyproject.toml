@@ -1,7 +1,7 @@
 [project]
 name = "rules-lawyer"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI Rules lawyer for warhammer 40k"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
